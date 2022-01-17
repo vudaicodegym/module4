@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+<center>
+    <button><a href="/create">Create</a></button>
+    <table border="1">
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>img</th>
+            <th>phone number</th>
+            <th>Class</th>
+            <th>operation</th>
+        </tr>
+        <tr th:each="s,loop :${students}">
+            <td th:text="${loop.count}"></td>
+            <td th:text="${s.name}"></td>
+            <td><img th:src="${s.img}" alt=""></td>
+            <td th:text="${s.phoneNumber}"></td>
+            <td th:text="${s.classroom.className}"></td>
+            <td>
+            <a th:href="@{/edit(id = ${s.id})}">Edit</a>
+                <br>
+            <button><a th:href="@{/delete(id = ${s.id})}">delete</a></button>
+            </td>
+        </tr>
+    </table>
+</center>
+</body>
+</html>
