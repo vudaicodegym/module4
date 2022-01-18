@@ -2,7 +2,7 @@ package project.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import project.model.Classroom;
+import project.model.ClassRoom;
 import project.repository.ClassroomRepo;
 
 import java.util.List;
@@ -11,7 +11,7 @@ public class ClassService implements IClassroomService{
     @Autowired
     ClassroomRepo classroomRepo;
     @Override
-    public List<Classroom> findAll() {
-        return (List<Classroom>) classroomRepo.findAll();
+    public List<ClassRoom> findAll() {
+        return (List<ClassRoom>) classroomRepo.findAll();
     }
 }

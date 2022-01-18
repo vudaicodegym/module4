@@ -1,11 +1,10 @@
 package project.service;
 
-import org.springframework.stereotype.Service;
-import project.model.Classroom;
+import project.model.ClassRoom;
 
 import java.util.List;
 
 
 public interface IClassroomService {
-    public List<Classroom> findAll();
+    public List<ClassRoom> findAll();
 }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+<center>
+    <button><a href="/create">Create</a></button>
+    <button><a href="/sort">sort by age</a></button>
+    <button><a href="/employee">sort default</a></button>
+    <br>
+    <form action="/search" method="post">
+        <div>
+            <input  name="search" placeholder="Search by name">
+            <button type="submit">search</button>
+        </div>
+    </form>
+    <table border="1">
+        <tr>
+            <th>#</th>
+            <th>id</th>
+            <th>name</th>
+            <th>age</th>
+            <th>salary</th>
+            <th>branch</th>
+            <th>optional</th>
+        </tr>
+        <tr th:each="e,loop :${employees}">
+            <td th:text="${loop.count}"></td>
+            <td th:text="${e.id}"></td>
+            <td><a th:href="@{/detail(id = ${e.id})}" th:text="${e.name}"></a></td>
+            <td th:text="${e.age}"></td>
+            <td th:text="${e.salary}"></td>
+            <td th:text="${e.branch.nameBranch}"></td>
+            <td>
+                <button><a th:href="@{/edit(id = ${e.id})}">Edit</a></button>
+                <br>
+                <button><a onclick="return confirm('Are you sure?')" th:href="@{/delete(id = ${e.id})}">delete</a></button>
+            </td>
+        </tr>
+    </table>
+
+</center>
+</body>
+</html>

@@ -5,19 +5,19 @@ import javax.persistence.*;
 @Entity
 public class Student {
 @Id
-@GeneratedValue(strategy= GenerationType.IDENTITY)
+
     private int id;
 private String name;
 private String img;
 private String phoneNumber;
 
 @ManyToOne
-    private Classroom classroom;
+    private ClassRoom classroom;
 
     public Student() {
     }
 
-    public Student(int id, String name, String img, String phoneNumber, Classroom classroom) {
+    public Student(int id, String name, String img, String phoneNumber, ClassRoom classroom) {
         this.id = id;
         this.name = name;
         this.img = img;
@@ -57,11 +57,11 @@ private String phoneNumber;
         this.phoneNumber = phoneNumber;
     }
 
-    public Classroom getClassroom() {
+    public ClassRoom getClassroom() {
         return classroom;
     }
 
-    public void setClassroom(Classroom classroom) {
+    public void setClassroom(ClassRoom classroom) {
         this.classroom = classroom;
     }
 }

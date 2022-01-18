@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>edit form</title>
+</head>
+<body>
+<!--<button><a href="/create">Create</a></button>-->
+<center>
+<form th:object="${employee}" method="post">
+<table border="1">
+    <tr>
+        <td><input th:field="*{id}"></td>
+        <td><input th:field="*{name}" ></td>
+        <td><input th:field="*{age}" ></td>
+        <td><input th:field="*{salary}"></td>
+<!--        <td><input th:field="*{id}"></td>-->
+        <td>
+            <select name="idBranch">
+                <option  th:each="b: ${branch}" th:text="${b.nameBranch}" th:value="${b.idBranch}">choice branch</option>
+            </select>
+        </td>
+        <td><button type="submit" >submit</button></td>
+    </tr>
+<!--    <tr>-->
+<!--        <td></td>-->
+<!--        <th>id</th>-->
+<!--        <th>name</th>-->
+<!--        <th>age</th>-->
+<!--        <th>salary</th>-->
+<!--        <th>branch</th>-->
+<!--    </tr>-->
+<!--    <tr th:each="e : ${employee}">-->
+<!--&lt;!&ndash;        <td>old employee</td>&ndash;&gt;-->
+<!--        <td th:text="${e.id}"></td>-->
+<!--        <td th:text="${e.name}"></td>-->
+<!--        <td th:text="${e.age}"></td>-->
+<!--        <td th:text="${e.salary}"></td>-->
+<!--        <td th:text="${e.branch.nameBranch}"></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>new</td>-->
+<!--        <td>id cannot be edited</td>-->
+<!--        <td>new name:<input th:field="*{name}"></td>-->
+<!--        <td>new age: <input th:field="*{age}"></td>-->
+<!--        <td>new salary:<input th:field="*{salary}"></td>-->
+
+<!--    </tr>-->
+</table>
+<!--</form>-->
+</center>
+</body>
+</html>
