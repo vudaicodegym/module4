@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>edit form</title>
+</head>
+<body>
+<center>
+    <h1>edit user</h1>
+    <form action="/edited" method="post" enctype="multipart/form-data" th:object="${user}">
+    <table border="5">
+        <tr>
+            <th></th>
+            <th>old user</th>
+            <th>new user</th>
+<!--            <th th:if="${#fields.hasErrors}" th:errors="errors"></th>-->
+        </tr>
+        <tr>
+            <th>id</th>
+            <td  th:text="*{id}"></td>
+            <td><input  th:field="*{id}" hidden>id cannot be edited</td>
+        </tr>
+        <tr>
+            <th>username</th>
+            <td th:text="*{userName}"></td>
+            <td><input th:field="*{userName}" th:default="*{userName}"></td>
+            <td th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></td>
+        </tr>
+        <tr>
+            <th>user password</th>
+            <td th:text="*{userPassword}"></td>
+            <td><input th:field="*{userPassword}" th:default="*{userPassword}"></td>
+            <td th:if="${#fields.hasErrors('userPassword')}" th:errors="*{userPassword}"></td>
+
+        </tr>
+        <tr>
+            <th>email</th>
+        <td th:text="*{email}"></td>
+        <td><input th:field="*{email}" th:default="*{email}"></td>
+        <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></td>
+        </tr>
+        <tr>
+            <th>phone number</th>
+            <td th:text="*{phoneNumber}" ></td>
+            <td><input th:field="*{phoneNumber}" th:default="*{phoneNumber}"></td>
+            <td th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></td>
+        </tr>
+            <th>role</th>
+        <td th:text="*{role.roleName}"></td>
+        <td><select th:field="*{role}" th:default="*{role}">
+            <option th:each="r : ${role}" th:text="${r.roleName}" th:value="${r.id}"></option>
+        </select> </td>
+        <tr>
+            <th>avatar</th>
+            <td><img th:src="*{avatar}" alt="avatar"></td>
+            <td><input type="file" name="upAvatar" data-th-default="*{avatar}">
+<!--                <input type="file" th:field="*{avatar}" name="oldAvatar" hidden>-->
+            </td>
+        </tr>
+    </table>
+        <button type="submit">submit</button>
+        <button><a href="/home">home</a></button>
+    </form>
+</center>
+</body>
+</html>

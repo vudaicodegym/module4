@@ -19,7 +19,7 @@ public class ProductController {
 
     ProductService productService = new ProductService();
 
-//
+    //
 //    @GetMapping("/product")
 //    public void showProduct(HttpServletRequest request, HttpServletResponse response) {
 //        request.setAttribute("products", ProductService.products);
@@ -31,9 +31,9 @@ public class ProductController {
 //        }
 //    }
     @GetMapping("/product")
-    public ModelAndView show(){
+    public ModelAndView show() {
         ModelAndView modelAndView = new ModelAndView("showProducts.jsp");
-        modelAndView.addObject("products",productService.products);
+        modelAndView.addObject("products", productService.products);
         return modelAndView;
     }
 
@@ -49,7 +49,7 @@ public class ProductController {
     }
 
     @GetMapping("/edit")
-    public String editForm(Model model , @RequestParam int id) {
+    public String editForm(Model model, @RequestParam int id) {
 //        request.setAttribute("p", ProductService.products.get(productService.findIndexByID(id)));
         model.addAttribute("p", ProductService.products.get(productService.findIndexByID(id)));
         return "/edit.jsp";

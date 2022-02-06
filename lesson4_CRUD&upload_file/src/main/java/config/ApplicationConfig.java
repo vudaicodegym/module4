@@ -94,6 +94,7 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
         dataSource.setPassword("Vudai1997");
         return dataSource;
     }
+
     // cấu hình thằng chứa entity
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
@@ -105,6 +106,7 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
         em.setJpaProperties(additionalProperties());
         return em;
     }
+
     // cấu hình để cho hibernate tự động tạo bảng cho mình.
     Properties additionalProperties() {
         Properties properties = new Properties();
@@ -112,6 +114,7 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
         return properties;
     }
+
     // cấu hình thằng để thao tác với CSDL
     @Bean
     public EntityManager entityManager(EntityManagerFactory entityManagerFactory) {
@@ -120,14 +123,13 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
 //   hết Cấu hình để kết nối CSDL
 
 
-
     @Bean
-    public IProducRepo iProducRepo(){
+    public IProducRepo iProducRepo() {
         return new ProductRepo();
     }
 
     @Bean
-    public ProductService productService(){
+    public ProductService productService() {
         return new ProductService();
     }
 

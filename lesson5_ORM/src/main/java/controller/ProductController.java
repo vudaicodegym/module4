@@ -17,22 +17,22 @@ public class ProductController {
     ProductService productService;
 
     @GetMapping("/product")
-    public ModelAndView showAll(){
+    public ModelAndView showAll() {
         ModelAndView modelAndView = new ModelAndView("show");
         modelAndView.addObject("products", productService.getAll());
         return modelAndView;
     }
 
     @GetMapping("/create")
-    public  ModelAndView showCreate(){
+    public ModelAndView showCreate() {
         ModelAndView modelAndView = new ModelAndView("create");
         modelAndView.addObject("product", new Product());
         return modelAndView;
     }
 
     @PostMapping("/create")
-    public  ModelAndView create(@ModelAttribute("product") Product product){
-        Category category =  new Category();
+    public ModelAndView create(@ModelAttribute("product") Product product) {
+        Category category = new Category();
         category.setId(1);
         product.setCategory(category);
 //        System.out.println(product.getId());

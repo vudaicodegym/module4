@@ -78,8 +78,6 @@ public class ProductControler {
     }
 
 
-
-
     @PostMapping("/uppFile")
     public String uppFile(@RequestParam MultipartFile uppImg) {
         String fileName = uppImg.getOriginalFilename();

@@ -33,10 +33,12 @@ import java.util.Properties;
 @ComponentScan("controller")
 public class ApplicationConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {
     private ApplicationContext applicationContext;
+
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
     }
+
     //Thymeleaf Configuration
     @Bean
     public SpringResourceTemplateResolver templateResolver() {
@@ -61,12 +63,14 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
         viewResolver.setTemplateEngine((ISpringTemplateEngine) templateEngine());
         return viewResolver;
     }
+
     @Override
     // chỉ cho Spring biết chỗ lấy tài liệu tĩnh.(js,css,img)
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/i/**")
                 .addResourceLocations("file:/Users/johntoan98gmail.com/Desktop/project/Module4/BTVN_Module4_Tuan1/src/main/webapp/");
     }
+
     // Thay đổi kích thước file upload
     @Bean
     public CommonsMultipartResolver multipartResolver() {
@@ -74,6 +78,7 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
         multipartResolver.setMaxUploadSizePerFile(10000000);
         return multipartResolver;
     }
+
     //    Cấu hình để kết nối CSDL
     @Bean
     public DataSource dataSource() {
@@ -84,6 +89,7 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
         dataSource.setPassword("Vudai1997");
         return dataSource;
     }
+
     // cấu hình thằng chứa entity
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
@@ -95,6 +101,7 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
         em.setJpaProperties(additionalProperties());
         return em;
     }
+
     // cấu hình để cho hibernate tự động tạo bảng cho mình.
     Properties additionalProperties() {
         Properties properties = new Properties();
@@ -112,11 +119,12 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
 
 
     @Bean
-    public ProductRepo getProductDao(){
+    public ProductRepo getProductDao() {
         return new ProductRepo();
     }
+
     @Bean
-    public ProductService getProductService(){
+    public ProductService getProductService() {
         return new ProductService();
     }
 

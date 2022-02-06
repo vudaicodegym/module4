@@ -8,10 +8,11 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class BranchService implements IBranchService{
+public class BranchService implements IBranchService {
 
     @Autowired
     BranchRepo branchRepo;
+
     @Override
     public List<Branch> findAll() {
         return (List<Branch>) branchRepo.findAll();

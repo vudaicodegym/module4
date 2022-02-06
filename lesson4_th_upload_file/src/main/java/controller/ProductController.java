@@ -1,7 +1,6 @@
 package controller;
 
 
-
 import model.Product;
 import model.ProductForm;
 import org.springframework.beans.factory.annotation.Value;
@@ -33,12 +32,14 @@ public class ProductController {
         model.addAttribute("products", products);
         return "/index";
     }
+
     @GetMapping("/create")
     public ModelAndView showCreateForm() {
         ModelAndView modelAndView = new ModelAndView("/create");
         modelAndView.addObject("productForm", new ProductForm());
         return modelAndView;
     }
+
     @PostMapping("/save")
     public ModelAndView saveProduct(@ModelAttribute ProductForm productForm) {
         MultipartFile multipartFile = productForm.getImage();
@@ -58,7 +59,7 @@ public class ProductController {
         ModelAndView modelAndView = new ModelAndView("/index");
         List<Product> products = productService.findAll();
         modelAndView.addObject("productForm", productForm);
-        modelAndView.addObject("products",products);
+        modelAndView.addObject("products", products);
         modelAndView.addObject("message", "Created new product successfully !");
         return modelAndView;
     }

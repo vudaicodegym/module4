@@ -6,7 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductService {
-    public  static  List<Product> products = new ArrayList<>();
+    public static List<Product> products = new ArrayList<>();
+
     static {
         products.add(new Product(1, "aaaa", "ccccc"));
         products.add(new Product(1, "aasad", "ccpoc"));
@@ -24,9 +25,10 @@ public class ProductService {
     public void delete(int id) {
         products.remove(findIndexByID(id));
     }
-    public int findIndexByID(int id){
+
+    public int findIndexByID(int id) {
         for (int i = 0; i < products.size(); i++) {
-            if (products.get(i).getId() == id){
+            if (products.get(i).getId() == id) {
                 return i;
             }
         }

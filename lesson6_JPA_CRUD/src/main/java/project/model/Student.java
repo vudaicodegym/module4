@@ -4,14 +4,14 @@ import javax.persistence.*;
 
 @Entity
 public class Student {
-@Id
+    @Id
 
     private int id;
-private String name;
-private String img;
-private String phoneNumber;
+    private String name;
+    private String img;
+    private String phoneNumber;
 
-@ManyToOne
+    @ManyToOne
     private ClassRoom classroom;
 
     public Student() {

@@ -12,7 +12,7 @@
     <br>
     <form action="/search" method="post">
         <div>
-            <input  name="search" placeholder="Search by name">
+            <input name="search" placeholder="Search by name">
             <button type="submit">search</button>
         </div>
     </form>
@@ -36,7 +36,8 @@
             <td>
                 <button><a th:href="@{/edit(id = ${e.id})}">Edit</a></button>
                 <br>
-                <button><a onclick="return confirm('Are you sure?')" th:href="@{/delete(id = ${e.id})}">delete</a></button>
+                <button><a onclick="return confirm('Are you sure?')" th:href="@{/delete(id = ${e.id})}">delete</a>
+                </button>
             </td>
         </tr>
     </table>

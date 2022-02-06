@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>create2</title>
+</head>
+<body>
+<form action="/created" method="post" th:object="${user}" enctype="multipart/form-data">
+    <table border="2">
+        <tr>
+            <th>username:</th>
+            <td><input th:field="*{userName}"></td>
+            <td th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></td>
+
+        </tr>
+        <tr>
+            <th>user password:</th>
+            <td ><input th:field="*{userPassword}"></td>
+            <td th:if="${#fields.hasErrors('userPassword')}" th:errors="*{userPassword}"></td>
+        </tr>
+        <tr>
+            <th>email:</th>
+            <td ><input th:field="*{email}"></td>
+            <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></td>
+        </tr>
+        <tr>
+            <th>phone number:</th>
+            <td ><input th:field="*{phoneNumber}"></td>
+            <td th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></td>
+        </tr>
+        <tr>
+            <th>avatar :</th>
+            <td><input type="file" name="upAvatar"></td>
+        </tr>
+        <tr>
+            <th>role: </th>
+            <td><select th:field="*{role}">
+                <option th:each="r : ${role}" th:text="${r.roleName}" th:value="${r.id}"></option>
+            </select> </td>
+        </tr>
+
+    </table>
+    <button type="submit">create</button>
+    <button><a href="/home">home</a></button>
+
+</form>
+</body>
+</html>

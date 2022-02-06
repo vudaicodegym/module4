@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h1>HOME</h1>
+    <a href="/create">create new student</a>
+    <table border="2">
+        <tr>
+            <th>#</th>
+            <th>id student</th>
+            <th>name</th>
+            <th>phone number</th>
+            <th>email</th>
+            <th>class room</th>
+            <th>avatar</th>
+            <th>optional</th>
+        </tr>
+        <tr th:each="s, loop : ${listStudent}">
+            <td th:text="*{loop.count}"></td>
+            <td th:text="*{s.idStudent}"></td>
+            <td th:text="*{s.studentName}"></td>
+            <td th:text="*{s.phoneNumber}"></td>
+            <td th:text="*{s.email}"></td>
+            <td th:text="*{s.classRoom.getClassName()}"></td>
+            <td><img th:src="*{s.img}"></td>
+            <td>
+                <button><a th:href="@{/delete(id=*{s.idStudent})}">delete</a></button>
+                <button><a th:href="@{/edit(id=${s.idStudent})}">edit</a></button>
+
+            </td>
+
+        </tr>
+    </table>
+
+
+</center>
+
+
+</body>
+</html>

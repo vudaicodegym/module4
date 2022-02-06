@@ -19,7 +19,7 @@
         <tr>
             <td>${p.id}</td>
             <td>${p.name}</td>
-<%--            <td><img src="${p.img}" width="30%" height="30%"></td>--%>
+                <%--            <td><img src="${p.img}" width="30%" height="30%"></td>--%>
             <td>${p.img}</td>
             <td>
                 <button><a href="/delete?id=${p.id}">delete</a></button>

@@ -9,13 +9,13 @@
 <a href="/employee">back to home</a>
 <form th:object="${employee}">
     <table border="1">
-   <tr>
-       <td th:text="*{id}"></td>
-   <td th:text="*{name}"></td>
-   <td th:text="*{age}"></td>
-   <td th:text="*{salary}"></td>
-   <td th:text="*{branch.nameBranch}"></td>
-   </tr>
+        <tr>
+            <td th:text="*{id}"></td>
+            <td th:text="*{name}"></td>
+            <td th:text="*{age}"></td>
+            <td th:text="*{salary}"></td>
+            <td th:text="*{branch.nameBranch}"></td>
+        </tr>
     </table>
 </form>
 </body>

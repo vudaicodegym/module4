@@ -8,8 +8,8 @@ import javax.persistence.Id;
 @Entity
 public class Branch {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private  int idBranch;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int idBranch;
     private String nameBranch;
 
     public Branch() {

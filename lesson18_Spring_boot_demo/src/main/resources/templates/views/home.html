@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+<center>
+    <h1>this is home</h1>
+    <button><a href="/create">create new user</a></button>
+    <form action="/search" method="post">
+            <input name="name" placeholder="Search by name">
+                <button type="submit">search</button>
+    </form>
+    <table border="1">
+        <tr>
+            <th>#</th>
+            <th>id</th>
+            <th>user name</th>
+            <th>password</th>
+            <th>email</th>
+            <th>phone number</th>
+            <th>role</th>
+            <th>avatar</th>
+            <th>optional</th>
+        </tr>
+        <tr th:each="u, loop : ${userList}">
+            <td th:text="${loop.count}"></td>
+            <td th:text="${u.id}"></td>
+            <td th:text="${u.userName}"></td>
+            <td th:text="${u.userPassword}"></td>
+            <td th:text="${u.email}"></td>
+            <td th:text="${u.phoneNumber}"></td>
+            <td th:text="${u.role.roleName}"></td>
+            <td><img th:src="${u.avatar}" alt="avatar" width="150" height="200"></td>
+            <td>
+                <button><a th:href="@{/edit(id = ${u.id})}">Edit</a></button>
+                <br>
+                <button><a onclick="return confirm('Are you sure?')" th:href="@{/delete(id = ${u.id})}">delete</a>
+                </button>
+            </td>
+        </tr>
+    </table>
+</center>
+
+</body>
+</html>

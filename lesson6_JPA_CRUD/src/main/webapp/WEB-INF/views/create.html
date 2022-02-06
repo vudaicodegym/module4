@@ -10,7 +10,7 @@
         <td><input th:field="*{name}"></td>
         <td><input th:field="*{phoneNumber}"></td>
         <td><input type="file" name="upImg"></td>
-<!--        <td><input th:field="*{}"></td>-->
+        <!--        <td><input th:field="*{}"></td>-->
         <td>
             <select name="idClassZoom">
                 <option th:each="c: ${classRoom}" th:text="${c.className}" th:value="${c.id}">choice class</option>

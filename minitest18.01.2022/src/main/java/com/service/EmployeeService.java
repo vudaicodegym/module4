@@ -11,12 +11,13 @@ import java.util.Locale;
 import java.util.Optional;
 
 @Repository
-public class EmployeeService implements IEmployeeService{
+public class EmployeeService implements IEmployeeService {
     @Autowired
     EmployeeRepo employeeRepo;
+
     @Override
     public List<Employee> findAll() {
-        return(List<Employee>) employeeRepo.findAll();
+        return (List<Employee>) employeeRepo.findAll();
     }
 
     @Override
@@ -33,12 +34,14 @@ public class EmployeeService implements IEmployeeService{
     public Optional<Employee> finById(int id) {
         return employeeRepo.findById(id);
     }
+
     @Override
-    public List<Employee> sort(){
+    public List<Employee> sort() {
         List<Employee> list = findAll();
         list.sort(Comparator.comparing(Employee::getAge));
         return list;
     }
+
     @Override
     public Employee findByName(String name) {
         for (Employee e : employeeRepo.findAll()) {

@@ -14,14 +14,16 @@ public class ProductRepo {
     @Autowired
     EntityManager entityManager;
     @Autowired
-         ProductService productRepo;
-    public List<Product> getList(){
+    ProductService productRepo;
+
+    public List<Product> getList() {
         String queryStr = "select p from Product p";
         TypedQuery<Product> query = entityManager.createQuery(queryStr, Product.class);
-        List<Product> list =   query.getResultList();
-        return  list;
+        List<Product> list = query.getResultList();
+        return list;
     }
-    public void save(Product product){
+
+    public void save(Product product) {
         EntityTransaction txn = entityManager.getTransaction();
         txn.begin();
         entityManager.persist(product);

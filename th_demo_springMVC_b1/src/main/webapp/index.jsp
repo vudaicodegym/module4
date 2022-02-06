@@ -7,11 +7,11 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
+<head>
     <title>$Title$</title>
-  </head>
-  <body>
+</head>
+<body>
 
-  <center><h1><a href="/products">START</a></h1></center>
-  </body>
+<center><h1><a href="/products">START</a></h1></center>
+</body>
 </html>

@@ -23,7 +23,7 @@ import java.io.IOException;
 @EnableWebMvc
 @ComponentScan("controller")
 @PropertySource("classpath:upload_file.properties")
-public class AppConfiguration implements WebMvcConfigurer,  ApplicationContextAware {
+public class AppConfiguration implements WebMvcConfigurer, ApplicationContextAware {
     @Value("${file-upload}")
     private String fileUpload;
 

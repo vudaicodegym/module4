@@ -43,7 +43,9 @@
                 <td><input type="text" name="name" placeholder="new name"></td>
                 <td><input type="text" name="img" placeholder="img link"></td>
             </tr>
-            <tr><td colspan="4"><input type="submit" value="submit"></td></tr>
+            <tr>
+                <td colspan="4"><input type="submit" value="submit"></td>
+            </tr>
         </table>
     </form>
 </center>

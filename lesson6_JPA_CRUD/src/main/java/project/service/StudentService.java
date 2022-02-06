@@ -8,10 +8,12 @@ import project.repository.StudentRepo;
 
 import java.util.List;
 import java.util.Optional;
+
 @Repository
-public class StudentService implements IStudentService{
+public class StudentService implements IStudentService {
     @Autowired
     StudentRepo studentRepo;
+
     @Override
     public List<Student> findAll() {
         return (List<Student>) studentRepo.findAll();

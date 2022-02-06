@@ -23,9 +23,9 @@
             <td th:text="${s.phoneNumber}"></td>
             <td th:text="${s.classroom.className}"></td>
             <td>
-            <a th:href="@{/edit(id = ${s.id})}">Edit</a>
+                <a th:href="@{/edit(id = ${s.id})}">Edit</a>
                 <br>
-            <button><a th:href="@{/delete(id = ${s.id})}">delete</a></button>
+                <button><a th:href="@{/delete(id = ${s.id})}">delete</a></button>
             </td>
         </tr>
     </table>

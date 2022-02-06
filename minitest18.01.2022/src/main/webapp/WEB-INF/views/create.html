@@ -11,12 +11,13 @@
             <td>name:<input th:field="*{name}"></td>
             <td>age: <input th:field="*{age}"></td>
             <td>salary:<input th:field="*{salary}"></td>
-<!--            <td><input th:field="*{age}"></td>-->
-<!--            <td><input type="file" name="upImg"></td>-->
+            <!--            <td><input th:field="*{age}"></td>-->
+            <!--            <td><input type="file" name="upImg"></td>-->
             <!--        <td><input th:field="*{}"></td>-->
             <td>
                 <select name="idBranch">
-                    <option  th:each="b: ${branch}" th:text="${b.nameBranch}" th:value="${b.idBranch}">choice branch</option>
+                    <option th:each="b: ${branch}" th:text="${b.nameBranch}" th:value="${b.idBranch}">choice branch
+                    </option>
                 </select>
             </td>
         </table>
